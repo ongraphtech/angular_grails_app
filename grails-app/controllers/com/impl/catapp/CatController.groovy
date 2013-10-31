@@ -13,7 +13,7 @@ class CatController {
     def index() { }
 
     def list() {
-        params.max = Math.min(params.max ? params.int('max') : 5, 100)
+        params.max = Math.min(params.max ? params.int('max') : 10, 100)
         response.setIntHeader('X-Pagination-Total', Cat.count())
      //   println Cat.list(params) as JSON
         render Cat.list(params) as JSON
